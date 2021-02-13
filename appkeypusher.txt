@@ -1,0 +1,4 @@
+app_id = "1155672"
+key = "fa9d58720afa1623683a"
+secret = "3b5e6e8fcf999c12063f"
+cluster = "us2"
