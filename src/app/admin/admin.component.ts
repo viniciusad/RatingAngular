@@ -16,7 +16,7 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
     feather.replace();
     const channel = this.pusher.init('rate');
-    channel.bind('message', (data:any) => {
+    channel.bind('message', (data: any) => {
       this.rating += data.score;
     });
   }

@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 declare const feather: any;
 export interface Message {
@@ -8,9 +8,9 @@ export interface Message {
 }
 
 @Component({
-  selector: 'app-chat',
-  templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.scss'],
+  selector: "app-chat",
+  templateUrl: "./chat.component.html",
+  styleUrls: ["chat.component.scss"],
 })
 export class ChatComponent implements OnInit {
   constructor(private http: HttpClient) {}
@@ -18,19 +18,19 @@ export class ChatComponent implements OnInit {
   @Output() onSendMessage: EventEmitter<Message> = new EventEmitter();
 
   message = {
-    name: '',
-    text: '',
+    name: "",
+    text: "",
   };
 
   sendMessage() {
-    if (this.message.text !== '' && this.message.name !== '') {
+    if (this.message.text !== "" && this.message.name !== "") {
       this.http
         .post(`http://localhost:4000/messages`, this.message)
         .subscribe((res: any) => {
           this.onSendMessage.emit(res);
           this.message = {
-            name: '',
-            text: '',
+            name: "",
+            text: "",
           };
         });
     }

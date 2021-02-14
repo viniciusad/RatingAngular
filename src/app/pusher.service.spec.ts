@@ -1,15 +1,15 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed, inject } from "@angular/core/testing";
 
-import { PusherService } from './pusher.service';
+import { PusherService } from "./pusher.service";
 
-describe('PusherService', () => {
+describe("PusherService", () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PusherService]
+      providers: [PusherService],
     });
   });
 
-  it('should be created', inject([PusherService], (service: PusherService) => {
+  it("should be created", inject([PusherService], (service: PusherService) => {
     expect(service).toBeTruthy();
   }));
 });

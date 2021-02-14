@@ -12,7 +12,7 @@ export class PusherService {
   }
   pusher;
 
-  public init(channel:any) {
+  public init(channel: any) {
     return this.pusher.subscribe(channel);
   }
 }
